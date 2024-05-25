@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('./images/Library-many-books_1920x1080.jpg');
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,6 +51,9 @@ tbody tr:hover {
 tbody tr:nth-child(even) {
     background-color: #a68a64;
 }
+tbody tr:nth-child(even):hover{
+    background-color: #432818 ;
+}
 
 tbody td:first-child, thead th:first-child {
     border-top-left-radius: 5px;
@@ -59,6 +63,33 @@ tbody td:last-child, thead th:last-child {
     border-top-right-radius: 5px;
 }
 
+.img-libros{
+    width: 250px;
+    height: 400px;
+    margin-bottom: 30px;
+    transition: all 0.4s;
+    align-items: center;
+    justify-content: center;
+}
+.img-libros:hover{
+    transform: scale(1.1);
+}
+.container{
+    display: flex;
+    gap: 20px;
+    color: #fffbfb;
+    text-shadow: 2px 2px 2px #000;
+    font-size: 20px;
+}
+.container-books{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px #fb6f92;
+    background-color: rgba(235, 227, 227, 0.856);
+    margin-top: 20px;
+}
 
 @media (max-width: 494px) {
     h1 {
@@ -88,10 +119,24 @@ tbody td:last-child, thead th:last-child {
         padding: 5px; /* Ajusta el relleno */
     }
 }
-@media (max-width: 280px) {
-    th, td {
-        font-size: 12px; 
-        padding: 5px; 
+@media (width <= 415px) {
+    table{
+        display: block;
+        overflow: scroll;
+    }
+    .container-books{
+        width: 100%;
+        display: block;
+    }
+
+    .container{
+        flex-direction: column;
+        font-size: 15px;
+        align-items: center;
+    }
+    .img-libros{
+        height: 300px;
+        width: 220px;
     }
 }
 
